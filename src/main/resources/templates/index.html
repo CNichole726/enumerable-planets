@@ -9,6 +9,22 @@
 </head>
 <body>
 <h1>Pick a planet:</h1>
-
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Planet</th>
+                <th scope="col">Length of Year in Earth Years</th>
+                <th scope="col">Is an Inner Planet?</th>
+            </tr>
+        </thead>
+        <tbody th:each="planet : ${planets}">
+        <tr class="table table-striped">
+            <td th:text="${planet.name}"></td>
+            <td th:text="${planet.yearLength}"></td>
+            <td th:if="${planet.isInner}">True</td>
+            <td th:unless="${planet.isInner}">False</td>
+        </tr>
+        </tbody>
+    </table>
 </body>
 </html>
